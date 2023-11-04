@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}Add Emp{% endblock title %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+{% block body %}
+<body>
+<div class="container jumbotron">
+  <h1 class="text-center">Filter Employee Details!</h1>
+    <hr>
+  <form method="post" action="/filter_emp">
+    {% csrf_token %}
+      <label for="name">First Name/Last Name</label>
+      <input type="text" class="form-control" id="name" value="{{name}}" name="name">
+      <br>
+      <label for="dept">Department</label>
+      <input type="text" class="form-control" id="dept" name="dept" value="{{dept}}" >
+      <br>
+      <label for="role">Role</label>
+      <input type="text" class="form-control" id="role" name="role"  value="{{role}}" >
+      <hr>
+      <button type="Submit" class="btn btn-dark">Submit</button>
+  </form>
+</div>
+</body>
+{% endblock body %}
+</html>

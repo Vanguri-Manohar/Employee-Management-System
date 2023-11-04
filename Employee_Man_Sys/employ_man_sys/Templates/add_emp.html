@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %} Add_Emp{% endblock title %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+{% block body %}
+<body>
+<div class="container  jumbotron">
+    <h2> <b>Add an Employee</b></h2>
+    <hr>
+    <form action="/add_emp" method="POST" autocomplete="off">
+       {% csrf_token %}
+
+        <label for="first_name">First Name</label><br>
+        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter Your First Name"><br>
+
+        <label for="last_name" class="form-label">Last Name</label><br>
+        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Your Last Name"><br>
+
+        <label for="salary" class="form-label">salary</label><br>
+        <input type="number" class="form-control" id="salary" name="salary" placeholder="Enter Salary"> <br>
+
+        <label for="dept" class="form-label">Department</label><br>
+        <input type="text"  class="form-control" id="dept" name="dept" placeholder="Enter Department"><br>
+        
+        <label for="role" class="form-label">Role</label><br>
+        <input type="text" class="form-control" id="role" name="role" placeholder="Enter Role"><br>
+
+        <label for="bonus" class="form-label">Bonus</label><br>
+        <input type="number" class="form-control" id="bonus" name="bonus" placeholder="Enter Bonus"><br> <br>
+       
+        <label for="phone" class="form-label">Phone Number</label><br>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number"><br> <br>
+
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    
+</div>
+
+</body>
+{% endblock body %}
+</html>
